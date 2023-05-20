@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/Logo/logo.png";
-import { FaList } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+
 const Header = () => {
   const mainmenu = (
     <>
@@ -11,7 +12,7 @@ const Header = () => {
         }
       >
         {" "}
-        <li className="menu h-5">Home</li>{" "}
+        <li className="font-swash text-xl mx-5 my-2 h-5">Home</li>{" "}
       </NavLink>
 
       <NavLink
@@ -21,7 +22,7 @@ const Header = () => {
         }
       >
         {" "}
-        <li className="menu h-5">Blogs</li>{" "}
+        <li className="font-swash text-xl mx-5 my-2 h-5">Blogs</li>{" "}
       </NavLink>
       <NavLink
         to="/all-toys"
@@ -30,7 +31,7 @@ const Header = () => {
         }
       >
         {" "}
-        <li className="menu h-5">All Toys</li>{" "}
+        <li className="font-swash text-xl mx-5 my-2 h-5">All Toys</li>{" "}
       </NavLink>
       <NavLink
         to="/my-toys"
@@ -39,7 +40,7 @@ const Header = () => {
         }
       >
         {" "}
-        <li className="menu h-5">My Toys</li>{" "}
+        <li className="font-swash text-xl mx-5 my-2 h-5">My Toys</li>{" "}
       </NavLink>
       <NavLink
         to="/add-toys"
@@ -48,7 +49,7 @@ const Header = () => {
         }
       >
         {" "}
-        <li className="menu h-5">Add Toys</li>{" "}
+        <li className="font-swash text-xl mx-5 my-2 h-5">Add Toys</li>{" "}
       </NavLink>
     </>
   );
@@ -61,7 +62,7 @@ const Header = () => {
               tabIndex={0}
               className="btn btn-ghost lg:hidden text-white text-2xl"
             >
-              <FaList />
+              <FaBars />
             </label>
             <ul
               tabIndex={0}
@@ -75,7 +76,7 @@ const Header = () => {
             {" "}
             <div className="flex items-center">
               <img src={logo} alt="logo" className=" h-20 " />
-              <h2 className="logo">Re-zanToys</h2>
+              <h2 className="logo text-3xl">Re-zanToys</h2>
             </div>
           </Link>
         </div>

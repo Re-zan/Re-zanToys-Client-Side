@@ -3,19 +3,15 @@
 @tailwind utilities;
 
 body {
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  background-color: #a5aead;
 }
 .logo {
   font-family: "Berkshire Swash", cursive;
   color: #8ca6a2;
-  font-size: 28px;
 }
-.menu {
-  font-family: "Berkshire Swash", cursive;
-  font-size: 20px;
-  margin: 10px 20px;
-}
+
 .my_container {
   @apply sm:max-w-full md:max-w-full lg:max-w-screen-xl mx-auto;
 }
