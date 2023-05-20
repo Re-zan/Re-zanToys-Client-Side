@@ -1,5 +1,12 @@
+import Banner from "./Banner/Banner";
+
 const Home = () => {
-  return <div>thi s is hoem</div>;
+  return (
+    <div className="">
+      <Banner></Banner>
+      This is our fetafdgdf{" "}
+    </div>
+  );
 };
 
 export default Home;

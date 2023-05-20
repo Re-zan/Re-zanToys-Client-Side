@@ -5,7 +5,8 @@
 body {
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
-  background-color: #a5aead;
+  /* background: #ffff; */
+  background: #a5aead;
 }
 .logo {
   font-family: "Berkshire Swash", cursive;

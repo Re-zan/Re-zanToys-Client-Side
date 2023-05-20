@@ -55,7 +55,7 @@ const Header = () => {
   );
   return (
     <div className=" bg-gray-800">
-      <div className="navbar my_container ">
+      <div className="navbar my_container py-4">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -75,8 +75,8 @@ const Header = () => {
           <Link to="/">
             {" "}
             <div className="flex items-center">
-              <img src={logo} alt="logo" className=" h-20 " />
-              <h2 className="logo text-3xl">Re-zanToys</h2>
+              <img src={logo} alt="logo" className=" h-24 " />
+              <h2 className="logo text-5xl">Re-zanToys</h2>
             </div>
           </Link>
         </div>
