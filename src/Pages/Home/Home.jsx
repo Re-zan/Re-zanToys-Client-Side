@@ -23,6 +23,12 @@ const Home = () => {
       ></Heading>
       <Gallery></Gallery>
       {/* gallery part end */}
+      {/* our blog part start */}
+      <Heading
+        title="Our Blogs "
+        description="Our Toys Blog is a treasure trove of inspiration and information for toy enthusiasts of all ages. Dive into captivating articles, reviews, and guides that explore the world of toys. From the latest toy releases to tips on collecting and playtime ideas, our blog is your go-to destination for all things toy-related."
+      ></Heading>
+      {/* our blog part end */}
     </div>
   );
 };
