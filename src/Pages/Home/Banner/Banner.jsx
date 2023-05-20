@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
-import banner1 from "../../../../public/banner1.json";
-import banner2 from "../../../../public/banner2.json";
-import banner3 from "../../../../public/banner3.json";
+import banner1 from "../../../assets/images/banner/bannerJson/banner1.json";
+import banner2 from "../../../assets/images/banner/bannerJson/banner2.json";
+import banner3 from "../../../assets/images/banner/bannerJson/banner3.json";
 import { Link } from "react-router-dom";
 const Banner = () => {
   return (
