@@ -15,7 +15,10 @@ const Gallery = () => {
           {images.map((image, i) => (
             <>
               {" "}
-              <div className=" bg-gray-300 transition duration-300 transform ease-in-out hover:scale-y-105 rounded-lg  shadow-xl">
+              <div
+                className=" bg-gray-300 transition duration-300 transform ease-in-out hover:scale-y-105 rounded-lg  shadow-xl"
+                key={i}
+              >
                 <img
                   key={i}
                   src={image}

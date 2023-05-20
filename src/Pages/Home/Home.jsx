@@ -1,6 +1,7 @@
 import Heading from "../../componentes/Heading/Heading";
 import Banner from "./Banner/Banner";
 import Gallery from "./Gallery/Gallery";
+import Service from "./Service/Service";
 
 const Home = () => {
   return (
@@ -8,6 +9,13 @@ const Home = () => {
       {/* banner part start */}
       <Banner></Banner>
       {/* banner part end */}
+      {/* service part start */}
+      <Heading
+        title="Our Services "
+        description="Welcome to our toy marketplace, where our services cater to every toy lover's needs. From Toy Sourcing to Toy Evaluation, Toy Trading to Toy Consignment, we provide a seamless experience. Discover a diverse range of toys, ensure quality and authenticity, connect with fellow enthusiasts, and easily sell or trade your beloved toys. Unleash the joy of toys with us. "
+      ></Heading>
+      <Service></Service>
+      {/* service part end */}
       {/* gallery part start */}
       <Heading
         title="Our Gallery Section"
