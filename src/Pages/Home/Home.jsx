@@ -1,6 +1,7 @@
 import Blogs from "../../componentes/Blog/Blogs";
 import Heading from "../../componentes/Heading/Heading";
 import Banner from "./Banner/Banner";
+import Contact from "./Contact/Contact";
 import Gallery from "./Gallery/Gallery";
 import Service from "./Service/Service";
 
@@ -24,6 +25,9 @@ const Home = () => {
       ></Heading>
       <Gallery></Gallery>
       {/* gallery part end */}
+      {/* our contact part start */}
+      <Contact></Contact>
+      {/* our contact part end */}
       {/* our blog part start */}
       <Heading
         title="Our Latest Blogs "
