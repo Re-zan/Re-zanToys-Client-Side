@@ -1,3 +1,4 @@
+import Blogs from "../../componentes/Blog/Blogs";
 import Heading from "../../componentes/Heading/Heading";
 import Banner from "./Banner/Banner";
 import Gallery from "./Gallery/Gallery";
@@ -25,9 +26,10 @@ const Home = () => {
       {/* gallery part end */}
       {/* our blog part start */}
       <Heading
-        title="Our Blogs "
+        title="Our Latest Blogs "
         description="Our Toys Blog is a treasure trove of inspiration and information for toy enthusiasts of all ages. Dive into captivating articles, reviews, and guides that explore the world of toys. From the latest toy releases to tips on collecting and playtime ideas, our blog is your go-to destination for all things toy-related."
       ></Heading>
+      <Blogs></Blogs>
       {/* our blog part end */}
     </div>
   );

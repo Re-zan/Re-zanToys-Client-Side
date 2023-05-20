@@ -24,3 +24,7 @@ body {
 .my_container {
   @apply sm:max-w-full md:max-w-full lg:max-w-screen-xl mx-auto;
 }
+
+.img_hover {
+  @apply transition duration-500 transform ease-in-out hover:scale-105;
+}
