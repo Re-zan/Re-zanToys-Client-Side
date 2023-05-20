@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="">
       <Banner></Banner>
-      This is our fetafdgdf{" "}
+      <h2 className=" my-72"> This is our fetafdgdf </h2>
     </div>
   );
 };

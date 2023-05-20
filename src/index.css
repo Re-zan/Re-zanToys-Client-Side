@@ -6,11 +6,16 @@ body {
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
   /* background: #ffff; */
-  background: #a5aead;
+  /* background: #a5aead; */
+  /* background: rgb(189, 149, 159); */
 }
 .logo {
   font-family: "Berkshire Swash", cursive;
   color: #8ca6a2;
+}
+
+.btn_style {
+  @apply rounded-lg text-white bg-[#A4747F] border-0 py-4 px-8 hover:bg-[#8CA6A2];
 }
 
 .my_container {
