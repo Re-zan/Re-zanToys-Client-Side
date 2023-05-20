@@ -13,6 +13,9 @@ body {
   font-family: "Berkshire Swash", cursive;
   color: #8ca6a2;
 }
+.text_shadows {
+  text-shadow: 3px 2px #a56f7c;
+}
 
 .btn_style {
   @apply rounded-lg text-white bg-[#A4747F] border-0 py-4 px-8 hover:bg-[#8CA6A2];
