@@ -14,10 +14,27 @@ const ALL_toys = () => {
     <div>
       <CommonBanner imgSroce={bannerImg}></CommonBanner>
       <div className="my_container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-20">
-          {toys.map((toy) => (
-            <ToyData key={toy._id} toy={toy}></ToyData>
-          ))}
+        <div className="overflow-x-auto my-20">
+          <table className="table w-full text-center">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>Serial No</th>
+                <th>Seller Name</th>
+                <th>Toy Name</th>
+                <th>Sub Category</th>
+                <th>Toy Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* row 1 */}
+              {toys.map((toy, index) => (
+                <ToyData key={toy._id} toy={toy} index={index}></ToyData>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
