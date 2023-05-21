@@ -3,7 +3,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 const Gallery = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
-    fetch("https://re-zan-toys-server-side.vercel.app/gallery")
+    fetch("https://re-zan-toys-server-side-re-zan.vercel.app/gallery")
       .then((res) => res.json())
       .then((data) => setImages(data));
   }, []);

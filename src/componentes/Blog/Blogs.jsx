@@ -4,7 +4,7 @@ import BlogData from "./BlogData";
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("https://re-zan-toys-server-side.vercel.app/blogs")
+    fetch("https://re-zan-toys-server-side-re-zan.vercel.app/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);

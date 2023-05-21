@@ -13,7 +13,7 @@ const ServiceData = ({ service }) => {
         <h2 className="card-title text-[#a56f7c] font-swash text-3xl my-2">
           {service_name}
         </h2>
-        <p>{description}</p>
+        <p className="text-gray-800">{description}</p>
       </div>
     </div>
   );
