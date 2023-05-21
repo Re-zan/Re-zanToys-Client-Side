@@ -4,7 +4,7 @@ import ServiceData from "./ServiceData";
 const Service = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://re-zan-toys-server-side.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

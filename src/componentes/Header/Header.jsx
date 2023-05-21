@@ -121,7 +121,7 @@ const Header = () => {
                     onMouseOver={handleDisplayNAme}
                     onMouseOut={handleDisplayNAmeNone}
                   >
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <img src={user.photoURL} />
                   </div>
                   <span
                     className=" text-white  p-4 absolute -top-5 end-0"
