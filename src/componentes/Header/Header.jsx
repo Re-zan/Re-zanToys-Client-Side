@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/Logo/logo.png";
 import { FaBars } from "react-icons/fa";
 import { useContext } from "react";
@@ -7,9 +7,21 @@ import { AuthContext } from "../../Provider/AuthProviders";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   //logut
   const handleLogOut = () => {
     logOut();
+    navigate("/");
+  };
+
+  //display name
+  const handleDisplayNAme = () => {
+    document.getElementById("disName").innerText = user?.displayName;
+  };
+  //mouse out
+  const handleDisplayNAmeNone = () => {
+    document.getElementById("disName").innerText = " ";
   };
   //menu
   const mainmenu = (
@@ -100,12 +112,36 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1  ">{mainmenu} </ul>
           </div>
           {user ? (
-            <button
-              className="btn bg-[#A4747F] border-0   hover:bg-[#8CA6A2]"
-              onClick={handleLogOut}
-            >
-              Sign Out
-            </button>
+            <>
+              {" "}
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div
+                    className="w-16 rounded-full relative"
+                    onMouseOver={handleDisplayNAme}
+                    onMouseOut={handleDisplayNAmeNone}
+                  >
+                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  </div>
+                  <span
+                    className=" text-white  p-4 absolute -top-5 end-0"
+                    id="disName"
+                  ></span>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-center text-[#A4747F]"
+                >
+                  <Link to="/profile">
+                    <li style={{ cursor: "pointer" }}>Profile</li>
+                  </Link>
+
+                  <li style={{ cursor: "pointer" }} onClick={handleLogOut}>
+                    Sign Out
+                  </li>
+                </ul>
+              </div>
+            </>
           ) : (
             <>
               <Link to="/login">

@@ -27,6 +27,7 @@ const AuthProviders = ({ children }) => {
 
   //createUser
   const createUser = (email, password) => {
+    setLoader(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -38,6 +39,7 @@ const AuthProviders = ({ children }) => {
 
   //google log in
   const googleLogin = () => {
+    setLoader(true);
     return signInWithPopup(auth, provider);
   };
 

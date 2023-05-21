@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Form } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProviders";
 
 const SignUpPage = () => {
@@ -7,6 +7,8 @@ const SignUpPage = () => {
   const { createUser, profile } = useContext(AuthContext);
   //states
   const [errors, setErrors] = useState(" ");
+  //navigate to home page
+  const navigate = useNavigate();
 
   //register in start
   const handleRegister = (event) => {
@@ -26,8 +28,8 @@ const SignUpPage = () => {
         .then((result) => {
           const logeduser = result.user;
           profile(logeduser, name, photo);
+          navigate("/");
           form.reset();
-          console.log(logeduser);
         })
         .catch((error) => {
           const message = error.message;
@@ -94,6 +96,14 @@ const SignUpPage = () => {
             </button>
           </div>
         </Form>
+        <Link
+          to="/login"
+          className="underline underline-offset-2 ... text-purple-900 mb-4"
+        >
+          <p className=" text-center">
+            {`  Do You Have Account Then Go to The Sign In Page`}
+          </p>
+        </Link>
       </div>
     </div>
   );
