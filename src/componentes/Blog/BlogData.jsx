@@ -17,17 +17,19 @@ const BlogData = ({ blog }) => {
             <img src={autho_img} className="img_hover" />
           </div>
         </div>
-        <div className="card-body w-[500px]">
+        <div className="card-body w-[300px] md:w-[400px] lg:w-[500px]">
           <h2 className="card-title text-[#a56f7c] font-swash text-2xl">
             {title}
           </h2>
           <p className="text-black my-4">{description}</p>
 
-          <div className=" flex items-center ">
-            <FaUserAlt className="text-[#a56f7c]"></FaUserAlt>: {author}{" "}
+          <div className=" flex items-center  ">
+            <FaUserAlt className="text-[#a56f7c]"></FaUserAlt>:{" "}
+            <span className="text-black"> {author}</span>{" "}
           </div>
           <div className=" flex items-center">
-            <FaClock className="text-[#a56f7c]"></FaClock>: {date}{" "}
+            <FaClock className="text-[#a56f7c]"></FaClock>:{" "}
+            <span className="text-black"> {date}</span>{" "}
           </div>
         </div>
       </div>

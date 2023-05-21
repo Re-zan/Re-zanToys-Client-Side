@@ -4,7 +4,11 @@ import { FaEnvelopeOpen, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import fb from "../../assets/images/icons/fb.png";
 import insta from "../../assets/images/icons/insta_.png";
 import twitter from "../../assets/images/icons/twitter.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProviders";
 const Footer = () => {
+  const { user } = useContext(AuthContext);
+  //menu
   const mainmenu = (
     <>
       <NavLink
@@ -35,24 +39,29 @@ const Footer = () => {
         {" "}
         <li className=" text-xl my-5 h-5">All Toys</li>{" "}
       </NavLink>
-      <NavLink
-        to="/my-toys"
-        className={({ isActive }) =>
-          isActive ? "text-[#b98f9a]" : "text-white"
-        }
-      >
-        {" "}
-        <li className=" text-xl   my-5 h-5">My Toys</li>{" "}
-      </NavLink>
-      <NavLink
-        to="/add-toys"
-        className={({ isActive }) =>
-          isActive ? "text-[#b98f9a]" : "text-white"
-        }
-      >
-        {" "}
-        <li className=" text-xl  my-5 h-5">Add Toys</li>{" "}
-      </NavLink>
+      {user && (
+        <>
+          {" "}
+          <NavLink
+            to="/my-toys"
+            className={({ isActive }) =>
+              isActive ? "text-[#b98f9a]" : "text-white"
+            }
+          >
+            {" "}
+            <li className=" text-xl   my-5 h-5">My Toys</li>{" "}
+          </NavLink>
+          <NavLink
+            to="/add-toys"
+            className={({ isActive }) =>
+              isActive ? "text-[#b98f9a]" : "text-white"
+            }
+          >
+            {" "}
+            <li className=" text-xl  my-5 h-5">Add Toys</li>{" "}
+          </NavLink>
+        </>
+      )}
     </>
   );
   return (

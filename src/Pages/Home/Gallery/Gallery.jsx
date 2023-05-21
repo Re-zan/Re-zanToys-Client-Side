@@ -11,7 +11,7 @@ const Gallery = () => {
   return (
     <div className="my_container mb-16">
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-        <Masonry gutter="18px">
+        <Masonry gutter="18px" className="p-3 lg:p-0">
           {images.map((image, i) => (
             <>
               {" "}

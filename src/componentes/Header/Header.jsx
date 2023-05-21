@@ -1,8 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/Logo/logo.png";
 import { FaBars } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProviders";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  //logut
+  const handleLogOut = () => {
+    logOut();
+  };
+  //menu
   const mainmenu = (
     <>
       <NavLink
@@ -33,24 +42,29 @@ const Header = () => {
         {" "}
         <li className="font-swash text-xl mx-5 my-2 h-5">All Toys</li>{" "}
       </NavLink>
-      <NavLink
-        to="/my-toys"
-        className={({ isActive }) =>
-          isActive ? "text-[#b98f9a]" : "text-[#8CA6A2]"
-        }
-      >
-        {" "}
-        <li className="font-swash text-xl mx-5 my-2 h-5">My Toys</li>{" "}
-      </NavLink>
-      <NavLink
-        to="/add-toys"
-        className={({ isActive }) =>
-          isActive ? "text-[#b98f9a]" : "text-[#8CA6A2]"
-        }
-      >
-        {" "}
-        <li className="font-swash text-xl mx-5 my-2 h-5">Add Toys</li>{" "}
-      </NavLink>
+      {user && (
+        <>
+          {" "}
+          <NavLink
+            to="/my-toys"
+            className={({ isActive }) =>
+              isActive ? "text-[#b98f9a]" : "text-[#8CA6A2]"
+            }
+          >
+            {" "}
+            <li className="font-swash text-xl mx-5 my-2 h-5">My Toys</li>{" "}
+          </NavLink>
+          <NavLink
+            to="/add-toys"
+            className={({ isActive }) =>
+              isActive ? "text-[#b98f9a]" : "text-[#8CA6A2]"
+            }
+          >
+            {" "}
+            <li className="font-swash text-xl mx-5 my-2 h-5">Add Toys</li>{" "}
+          </NavLink>
+        </>
+      )}
     </>
   );
   return (
@@ -76,7 +90,7 @@ const Header = () => {
             {" "}
             <div className="flex items-center">
               <img src={logo} alt="logo" className=" h-24 " />
-              <h2 className="logo text-5xl">Re-zanToys</h2>
+              <h2 className="logo text-lg md:text-5xl">Re-zanToys</h2>
             </div>
           </Link>
         </div>
@@ -85,9 +99,22 @@ const Header = () => {
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal px-1  ">{mainmenu} </ul>
           </div>
-          <button className="btn bg-[#A4747F] border-0  px-8 py-4 hover:bg-[#8CA6A2]">
-            Sign In
-          </button>
+          {user ? (
+            <button
+              className="btn bg-[#A4747F] border-0   hover:bg-[#8CA6A2]"
+              onClick={handleLogOut}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="btn bg-[#A4747F] border-0   hover:bg-[#8CA6A2]">
+                  Sign In
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
