@@ -1,16 +1,33 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProviders";
+import Swal from "sweetalert2";
 const Add_toys = () => {
   const { user } = useContext(AuthContext);
   // console.log(user);
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (toyData) => {
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(toyData),
+    })
+      .then((res) => res.json)
+      .then((result) => {
+        Swal.fire({
+          title: "Success!",
+          text: "Successfully Added A Toy",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+      });
+  };
   return (
     <div className="my_container my-36">
       <div className="md:w-[650px]  lg:w-[800px] mx-auto bg-[#A4747F] glass hover:bg-[#A4747F] p-20  shadow-2xl rounded-lg">
@@ -117,7 +134,7 @@ const Add_toys = () => {
           <div className="my-3 w-full  max-w-lg mx-auto">
             <div className="form-control">
               <textarea
-                className="textarea textarea-bordered h-36"
+                className="textarea border-0 rounded-none h-36"
                 placeholder="Description"
                 {...register("description", { required: true })}
               ></textarea>
