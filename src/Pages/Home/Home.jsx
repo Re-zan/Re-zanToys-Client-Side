@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import Contact from "./Contact/Contact";
 import Gallery from "./Gallery/Gallery";
 import LatestData from "./Our Latest data/LatestData";
+import PopularData from "./Popular/PopularData";
 import Service from "./Service/Service";
 import ShopByCategory from "./Shop BY Category/ShopByCategory";
 
@@ -41,6 +42,10 @@ const Home = () => {
       ></Heading>
       <ShopByCategory></ShopByCategory>
       {/* shop by Category end */}
+
+      {/* popular part start */}
+      <PopularData></PopularData>
+      {/* popular part end */}
 
       {/* our contact part start */}
       <Contact></Contact>

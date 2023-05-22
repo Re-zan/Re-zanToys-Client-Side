@@ -19,7 +19,7 @@ const CategoryData = ({ subcat }) => {
         <h2 className="card-title text-[#a56f7c] font-swash text-3xl  h-20">
           {toy_name}
         </h2>
-        <div className="flex items-center my-6 text-lg">
+        <div className="flex items-center my-8 text-lg">
           <p className="text-gray-800 font-semibold">Price: $ {toy_price}</p>
           <Rating
             style={{ maxWidth: 100 }}

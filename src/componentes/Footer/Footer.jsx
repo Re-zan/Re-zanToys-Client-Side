@@ -6,7 +6,6 @@ import insta from "../../assets/images/icons/insta_.png";
 import twitter from "../../assets/images/icons/twitter.png";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
-import Datas from "../../Pages/Home/Our Latest data/Datas";
 import FooterData from "./FooterData";
 const Footer = () => {
   const { user } = useContext(AuthContext);
