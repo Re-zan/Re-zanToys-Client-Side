@@ -20,7 +20,11 @@ const Datas = ({ toy }) => {
       >
         <div>
           <figure className="relative">
-            <img src={photo} alt={toy_name} className=" h-52 img_hover" />
+            <img
+              src={photo}
+              alt={toy_name}
+              className=" h-52 w-full md:w-0 img_hover"
+            />
           </figure>
         </div>
         <div className="py-4">

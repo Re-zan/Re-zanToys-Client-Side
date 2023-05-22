@@ -122,12 +122,12 @@ const Footer = () => {
           </h2>
           <ul>{mainmenu}</ul>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <h2 className="text-xl font-semibold text-white mt-6 mb-5">
             Products
           </h2>
 
-          <div className=" w-[200px] h-[200px] hidden lg:block">
+          <div className=" w-[200px] h-[200px] ">
             {toys.slice(0, 1).map((toy, index) => (
               <FooterData key={toy._id} toy={toy} index={index}></FooterData>
             ))}
