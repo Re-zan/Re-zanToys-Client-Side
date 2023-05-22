@@ -89,6 +89,7 @@ const Add_toys = () => {
               <option value="dinosaur">dinosaur</option>
               <option value="dogs">Dogs</option>
               <option value="horse">Horse</option>
+              <option value="cats">Cat</option>
             </select>
             {errors.Sub_category && (
               <span className="text-red-800">This field is required</span>
@@ -109,7 +110,6 @@ const Add_toys = () => {
 
           <div className="my-3 w-full  max-w-lg mx-auto">
             <input
-              type="number"
               placeholder="Toy Rating"
               {...register("toy_rating", { required: true })}
               className="w-full max-w-lg mx-auto p-2"

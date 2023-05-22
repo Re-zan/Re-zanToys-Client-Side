@@ -10,7 +10,7 @@ const ToyData = ({ toy, index }) => {
       <td>{seller_name}</td>
       <td>{toy_name}</td>
       <td>{Sub_category}</td>
-      <td>{toy_price}</td>
+      <td>$ {toy_price}</td>
       <td>{quantity}</td>
       <td>
         <Link to="/login">

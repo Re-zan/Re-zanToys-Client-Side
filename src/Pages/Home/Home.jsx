@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import Contact from "./Contact/Contact";
 import Gallery from "./Gallery/Gallery";
 import Service from "./Service/Service";
+import ShopByCategory from "./Shop BY Category/ShopByCategory";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       {/* banner part start */}
       <Banner></Banner>
       {/* banner part end */}
+
       {/* service part start */}
       <Heading
         title="Our Services "
@@ -18,6 +20,7 @@ const Home = () => {
       ></Heading>
       <Service></Service>
       {/* service part end */}
+
       {/* gallery part start */}
       <Heading
         title="Our Gallery Section"
@@ -25,9 +28,19 @@ const Home = () => {
       ></Heading>
       <Gallery></Gallery>
       {/* gallery part end */}
+
+      {/* shop by Category start */}
+      <Heading
+        title="Shop By Category"
+        description="Explore our diverse range of categories and find the perfect toys for every child's delight. From educational toys that inspire learning to imaginative playsets that transport kids to new worlds, we have something for everyone. Discover the magic of our carefully curated selection and make playtime an unforgettable adventure."
+      ></Heading>
+      <ShopByCategory></ShopByCategory>
+      {/* shop by Category end */}
+
       {/* our contact part start */}
       <Contact></Contact>
       {/* our contact part end */}
+
       {/* our blog part start */}
       <Heading
         title="Our Latest Blogs "
