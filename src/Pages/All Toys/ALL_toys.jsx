@@ -5,11 +5,22 @@ import bannerImg from "../../assets/images/banner/bannerImg/Toy-Names-For-Kids.j
 
 const ALL_toys = () => {
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState(" ");
   useEffect(() => {
     fetch("https://re-zan-toys-server-side.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
+
+  const handleSearch = () => {
+    fetch(
+      `https://re-zan-toys-server-side.vercel.app/toys/searchBy/${searchText}`
+    )
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  };
+
+  console.log(searchText);
   return (
     <div>
       <CommonBanner imgSroce={bannerImg}></CommonBanner>
@@ -17,11 +28,15 @@ const ALL_toys = () => {
         <div className="form-control w-[300px] md:w-[600px] lg:w-[1000px] mx-auto">
           <div className="input-group mb-10 mt-20">
             <input
+              onChange={(e) => setSearchText(e.target.value)}
               type="text"
-              placeholder="Search Your Toys"
+              placeholder="Search You Toys "
               className="input input-bordered  w-full mx-auto"
             />
-            <button className="btn btn-square bg-[#A4747F] border-0">
+            <button
+              className="btn btn-square bg-[#A4747F] border-0"
+              onClick={handleSearch}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
