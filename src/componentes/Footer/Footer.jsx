@@ -73,7 +73,7 @@ const Footer = () => {
     </>
   );
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gray-700 mt-24">
       <footer className="footer px-5 lg:px-0 py-20  my_container">
         <div>
           <Link to="/">

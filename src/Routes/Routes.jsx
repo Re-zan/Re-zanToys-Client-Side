@@ -8,6 +8,7 @@ import Add_toys from "../Pages/Add Toys/Add_toys";
 import Login from "../Pages/Login/Login";
 import SignUpPage from "../Pages/SignUp/SignUpPage";
 import Profile from "../Pages/Profile/Profile";
+import Details from "../Pages/ProductDetails/Details";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,12 @@ const router = createBrowserRouter([
       {
         path: "add-toys",
         element: <Add_toys></Add_toys>,
+      },
+      {
+        path: "toys/:id",
+        element: <Details></Details>,
+        loader: ({ params }) =>
+          fetch(`https://re-zan-toys-server-side.vercel.app/toys/${params.id}`),
       },
       {
         path: "login",
