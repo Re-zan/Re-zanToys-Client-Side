@@ -1,11 +1,23 @@
 import { Rating } from "@smastrom/react-rating";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Datas = ({ toy }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const { _id, photo, toy_name, toy_rating, toy_price } = toy;
   return (
     <Link to={`/toys/${_id}`}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 bg-gray-200 rounded-lg">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-2 bg-gray-200 rounded-lg"
+        data-aos="fade-left"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
         <div>
           <figure className="relative">
             <img src={photo} alt={toy_name} className=" h-52 img_hover" />

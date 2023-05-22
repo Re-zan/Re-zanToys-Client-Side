@@ -127,7 +127,7 @@ const Footer = () => {
             Products
           </h2>
 
-          <div className="grid grid-cols-1  gap-8 p-3 lg:p-0  w-[200px] h-[200px]">
+          <div className=" w-[200px] h-[200px] hidden lg:block">
             {toys.slice(0, 1).map((toy, index) => (
               <FooterData key={toy._id} toy={toy} index={index}></FooterData>
             ))}

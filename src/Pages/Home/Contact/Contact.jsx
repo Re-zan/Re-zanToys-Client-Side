@@ -1,8 +1,21 @@
 import { Form } from "react-router-dom";
 import contactImg from "../../../assets/images/contact/contact-us-concept-illustration_114360-3147.jpg";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Contact = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="my_container my-20 grid grid-cols-1 md:grid-cols-2 bg-gray-200 skew-y-1">
+    <div
+      className="my_container my-20 grid grid-cols-1 md:grid-cols-2 bg-gray-200 skew-y-1"
+      data-aos="fade-left"
+      data-aos-offset="200"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="600"
+    >
       <div className=" p-10">
         {" "}
         <h2 className="text-[#a56f7c] text-5xl font-swash my-4">

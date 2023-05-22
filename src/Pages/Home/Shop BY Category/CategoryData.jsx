@@ -1,10 +1,16 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProviders";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CategoryData = ({ subcat }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const { user } = useContext(AuthContext);
   const { _id, photo, toy_name, toy_rating, toy_price } = subcat;
   const dhdh = () => {
@@ -13,7 +19,13 @@ const CategoryData = ({ subcat }) => {
     }
   };
   return (
-    <div className="card bg-gray-200 ">
+    <div
+      className="card bg-gray-200 "
+      data-aos="fade-right"
+      data-aos-offset="200"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="600"
+    >
       <figure className="relative">
         <img
           src={photo}
