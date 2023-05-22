@@ -4,10 +4,19 @@ import { FaEnvelopeOpen, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import fb from "../../assets/images/icons/fb.png";
 import insta from "../../assets/images/icons/insta_.png";
 import twitter from "../../assets/images/icons/twitter.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
+import Datas from "../../Pages/Home/Our Latest data/Datas";
+import FooterData from "./FooterData";
 const Footer = () => {
   const { user } = useContext(AuthContext);
+  //toys
+  const [toys, setToys] = useState([]);
+  useEffect(() => {
+    fetch("https://re-zan-toys-server-side.vercel.app/toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
   //menu
   const mainmenu = (
     <>
@@ -118,6 +127,12 @@ const Footer = () => {
           <h2 className="text-xl font-semibold text-white mt-6 mb-5">
             Products
           </h2>
+
+          <div className="grid grid-cols-1  gap-8 p-3 lg:p-0  w-[200px] h-[200px]">
+            {toys.slice(0, 1).map((toy, index) => (
+              <FooterData key={toy._id} toy={toy} index={index}></FooterData>
+            ))}
+          </div>
         </div>
         <div>
           <h2 className="text-xl font-semibold text-white mt-6 mb-5">

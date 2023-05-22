@@ -27,7 +27,7 @@ const Banner = () => {
                 <button className="btn_style">Explore All Toys</button>
               </Link>
             </div>
-            <div className=" hidden lg:block ">
+            <div className=" hidden lg:block  ">
               <Lottie animationData={banner1} loop={true} />
             </div>
           </div>

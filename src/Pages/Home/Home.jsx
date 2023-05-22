@@ -3,6 +3,7 @@ import Heading from "../../componentes/Heading/Heading";
 import Banner from "./Banner/Banner";
 import Contact from "./Contact/Contact";
 import Gallery from "./Gallery/Gallery";
+import LatestData from "./Our Latest data/LatestData";
 import Service from "./Service/Service";
 import ShopByCategory from "./Shop BY Category/ShopByCategory";
 
@@ -20,6 +21,10 @@ const Home = () => {
       ></Heading>
       <Service></Service>
       {/* service part end */}
+
+      {/* our latet part start */}
+      <LatestData></LatestData>
+      {/* our latet part end */}
 
       {/* gallery part start */}
       <Heading
