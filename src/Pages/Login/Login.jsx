@@ -1,4 +1,4 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGofore } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
@@ -9,6 +9,11 @@ const Login = () => {
 
   //states
   const [errors, setErrors] = useState(" ");
+
+  //private route procees
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   // googlogIn
   const handleGoogleLogIn = () => {
     googleLogin()
@@ -20,6 +25,7 @@ const Login = () => {
       .catch((error) => {
         console.log(error);
       });
+    navigate(from, { replace: true });
   };
   //log in start
   const handleLogin = (event) => {
@@ -34,7 +40,7 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           form.reset();
-          console.log(user);
+          navigate(from, { replace: true });
         })
         .catch((error) => {
           const message = error.message;

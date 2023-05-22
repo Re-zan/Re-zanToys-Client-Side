@@ -7,6 +7,7 @@ import CategoryData from "../Home/Shop BY Category/CategoryData";
 const Details = () => {
   const detail = useLoaderData();
   const {
+    _id,
     Sub_category,
     description,
     photo,
@@ -25,7 +26,9 @@ const Details = () => {
   }, []);
 
   //popular data
-  const mayLke = toys.filter((data) => data.Sub_category == Sub_category);
+  const mayLke = toys.filter(
+    (data) => data.Sub_category == Sub_category && data._id !== _id
+  );
   return (
     <div>
       <div className="my_container">
@@ -43,7 +46,7 @@ const Details = () => {
               {toy_name}
             </h2>
             <p className="text-gray-800 pt-5 pb-3">{description}</p>
-            <div className="flex items-center justify-between ">
+            <div className="lg:flex items-center justify-between ">
               <p className="text-gray-800 font-semibold pt-4 pb-2">
                 Price: $ {toy_price}
               </p>
@@ -68,7 +71,7 @@ const Details = () => {
         </div>
 
         <div className="flex justify-between pb-6 border-[#a56f7c] border-b-2">
-          <h2 className="card-title text-[#a56f7c] font-swash text-5xl  h-20">
+          <h2 className="card-title text-[#a56f7c] font-swash text-5xl ml-6  h-20">
             You May Also Like
           </h2>
         </div>

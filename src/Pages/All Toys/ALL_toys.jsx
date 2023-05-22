@@ -14,7 +14,7 @@ const ALL_toys = () => {
     <div>
       <CommonBanner imgSroce={bannerImg}></CommonBanner>
       <div className="my_container">
-        <div className="form-control w-[1000px] mx-auto">
+        <div className="form-control w-[300px] md:w-[600px] lg:w-[1000px] mx-auto">
           <div className="input-group mb-10 mt-20">
             <input
               type="text"

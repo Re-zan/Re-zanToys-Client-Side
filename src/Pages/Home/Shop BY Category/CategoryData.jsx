@@ -1,16 +1,33 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProviders";
+
 const CategoryData = ({ subcat }) => {
+  const { user } = useContext(AuthContext);
   const { _id, photo, toy_name, toy_rating, toy_price } = subcat;
+  const dhdh = () => {
+    if (!user) {
+      alert("You have to log in first to view details");
+    }
+  };
   return (
     <div className="card bg-gray-200 ">
       <figure className="relative">
-        <img src={photo} alt={toy_name} className=" h-64 w-full img_hover " />
+        <img
+          src={photo}
+          alt={toy_name}
+          className=" h-72 w-full  img_hover rounded-lg"
+        />
       </figure>
-      <div className=" absolute top-5 right-4">
+
+      <div className=" absolute top-3 right-4">
         <Link to={`/toys/${_id}`}>
-          <button className="btn bg-[#A4747F] border-0   hover:bg-[#8CA6A2]">
+          <button
+            className="text-white px-4 py-2 rounded-lg bg-[#A4747F] border-0  text-sm  hover:bg-[#8CA6A2]"
+            onClick={dhdh}
+          >
             Details
           </button>
         </Link>
