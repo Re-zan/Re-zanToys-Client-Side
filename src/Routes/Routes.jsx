@@ -10,11 +10,14 @@ import SignUpPage from "../Pages/SignUp/SignUpPage";
 import Profile from "../Pages/Profile/Profile";
 import Details from "../Pages/ProductDetails/Details";
 import PrivateRouter from "./PrivateRouter";
+import UpdateData from "../Pages/My Toys/UpdateData";
+import ErrorPage from "../componentes/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -31,6 +34,12 @@ const router = createBrowserRouter([
       {
         path: "my-toys",
         element: <My_toys></My_toys>,
+      },
+      {
+        path: "my-toys/:id",
+        element: <UpdateData></UpdateData>,
+        loader: ({ params }) =>
+          fetch(`https://re-zan-toys-server-side.vercel.app/toys/${params.id}`),
       },
       {
         path: "add-toys",

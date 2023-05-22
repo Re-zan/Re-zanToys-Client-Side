@@ -7,7 +7,9 @@ const Datas = ({ toy }) => {
     <Link to={`/toys/${_id}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 bg-gray-200 rounded-lg">
         <div>
-          <img src={photo} alt={toy_name} className=" h-52 img_hover" />
+          <figure className="relative">
+            <img src={photo} alt={toy_name} className=" h-52 img_hover" />
+          </figure>
         </div>
         <div className="py-4">
           <h2 className="card-title text-[#a56f7c] font-swash text-base h-20">

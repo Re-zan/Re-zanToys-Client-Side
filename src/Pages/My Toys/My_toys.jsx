@@ -10,13 +10,41 @@ const My_toys = () => {
       .then((res) => res.json())
       .then((data) => setMy_toys(data));
   }, [user]);
-  console.log(my_toys);
+
+  const handleAes = () => {
+    fetch(`https://re-zan-toys-server-side.vercel.app/my-toys/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setMy_toys(data));
+  };
+  const handleDes = () => {
+    fetch(
+      `https://re-zan-toys-server-side.vercel.app/my-toys/des/${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => setMy_toys(data));
+  };
+  // function run() {}
   return (
     <div>
       {" "}
       <div className="my_container">
-        <div className="form-control w-[300px] md:w-[600px] lg:w-[1000px] mx-auto my-20"></div>
-        <div className="overflow-x-auto mb-20">
+        <div className="flex items-center mt-20">
+          <p className="text-3xl font-swash font-semibold mr-3">Filter By :</p>
+          <button
+            className="btn bg-[#A4747F] text-white border-0 mr-6"
+            onClick={handleAes}
+          >
+            Ascending{" "}
+          </button>
+          <button
+            className="btn bg-[#A4747F] text-white border-0 mr-6"
+            onClick={handleDes}
+          >
+            Descending
+          </button>
+        </div>
+
+        <div className="overflow-x-auto mb-20 mt-6">
           <table className="table w-full text-center">
             {/* head */}
             <thead>
@@ -36,7 +64,13 @@ const My_toys = () => {
             <tbody>
               {/* row 1 */}
               {my_toys.map((toy, index) => (
-                <MyToyData key={toy._id} toy={toy} index={index}></MyToyData>
+                <MyToyData
+                  key={toy._id}
+                  toy={toy}
+                  index={index}
+                  setMy_toys={setMy_toys}
+                  my_toys={my_toys}
+                ></MyToyData>
               ))}
             </tbody>
           </table>

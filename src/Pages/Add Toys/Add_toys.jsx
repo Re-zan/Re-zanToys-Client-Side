@@ -19,7 +19,7 @@ const Add_toys = () => {
       body: JSON.stringify(toyData),
     })
       .then((res) => res.json)
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           title: "Success!",
           text: "Successfully Added A Toy",

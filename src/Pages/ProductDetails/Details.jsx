@@ -1,6 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import { useEffect, useState } from "react";
-import { FaUserAlt } from "react-icons/fa";
+import { FaEnvelopeOpen, FaUserAlt } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import CategoryData from "../Home/Shop BY Category/CategoryData";
 
@@ -16,6 +16,7 @@ const Details = () => {
     toy_rating,
     quantity,
     seller_name,
+    seller_email,
   } = detail;
 
   const [toys, setToys] = useState([]);
@@ -37,12 +38,19 @@ const Details = () => {
             {" "}
             <img src={photo} alt={toy_name} className="h-full" />
           </div>
-          <div className="pr-24 py-16 pl-8">
-            <p className="text-[#a56f7c] flex items-center mb-3">
-              <FaUserAlt className="mr-3"></FaUserAlt>{" "}
-              <span>{seller_name}</span>{" "}
-            </p>
-            <h2 className="card-title text-[#a56f7c] font-swash text-5xl ">
+          <div className="pr-24 py-16 pl-8 ">
+            <div className="lg:flex items-center justify-between ">
+              <p className="text-[#a56f7c] flex items-center mb-3">
+                <FaUserAlt className="mr-3"></FaUserAlt>{" "}
+                <span>{seller_name}</span>{" "}
+              </p>
+              <p className="text-[#a56f7c] flex items-center mb-3">
+                <FaEnvelopeOpen className="mr-3"></FaEnvelopeOpen>
+                <span>{seller_email}</span>{" "}
+              </p>
+            </div>
+
+            <h2 className="card-title text-[#a56f7c] font-swash text-5xl mt-4 ">
               {toy_name}
             </h2>
             <p className="text-gray-800 pt-5 pb-3">{description}</p>
