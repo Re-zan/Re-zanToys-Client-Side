@@ -20,7 +20,7 @@ const Blog = () => {
       <CommonBanner imgSroce={img}></CommonBanner>
       {/* banner end  */}
       {/* blog data start */}
-      <div className="my_container grid grid-cols-1 md:grid-cols-2 gap-6 p-4 lg:p-0 my-40">
+      <div className="my_container grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 lg:p-0 my-40">
         {blogs.map((blog) => (
           <BlogData key={blog._id} blog={blog}></BlogData>
         ))}
@@ -31,7 +31,7 @@ const Blog = () => {
         description="Welcome to our FAQ section, your go-to resource for all things toy-related. Find answers to commonly asked questions, from toy care tips to shipping and returns. Unlock valuable insights, gain clarity, and make informed decisions as you navigate the world of toys with confidence."
       ></Heading>
       <div>
-        <div className=" w-[1000px] mx-auto collapse collapse-plus border  bg-white my-8">
+        <div className="md:w-[600px] lg:w-[1000px] mx-auto collapse collapse-plus border  bg-white my-8">
           <input type="checkbox" className="peer" />
           <div className="collapse-title title_text text-[#a86978]  text-2xl shadow-lg">
             Q: What is an access token and refresh token? How do they work and{" "}
@@ -79,7 +79,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className=" w-[1000px] mx-auto collapse collapse-plus border  bg-white my-8">
+        <div className="md:w-[600px] lg:w-[1000px] mx-auto collapse collapse-plus border  bg-white my-8">
           <input type="checkbox" className="peer" />
           <div className="collapse-title title_text text-[#a86978]  text-2xl shadow-lg">
             Q: Compare SQL and NoSQL databases?
@@ -103,7 +103,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className=" w-[1000px] mx-auto collapse collapse-plus border  bg-white my-8">
+        <div className=" md:w-[600px] lg:w-[1000px] mx-auto collapse collapse-plus border  bg-white my-8">
           <input type="checkbox" className="peer" />
           <div className="collapse-title title_text text-[#a86978]  text-2xl shadow-lg">
             Q: What is express js? What is Nest JS ?
@@ -118,7 +118,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className=" w-[1000px] mx-auto collapse collapse-plus border  bg-white mt-8 mb-36">
+        <div className=" md:w-[600px] lg:w-[1000px] mx-auto collapse collapse-plus border  bg-white mt-8 mb-36">
           <input type="checkbox" className="peer" />
           <div className="collapse-title title_text text-[#a86978]  text-2xl shadow-lg">
             Q: What is MongoDB aggregate and how does it work ?
