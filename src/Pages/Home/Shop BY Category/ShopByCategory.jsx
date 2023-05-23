@@ -12,6 +12,7 @@ const ShopByCategory = () => {
 
   //Uicorn data
   const uicornData = toys.filter((data) => data.Sub_category === "unicorn");
+
   //Horse data
   const horseData = toys.filter((data) => data.Sub_category === "horse");
   //teddy_bear data
@@ -39,42 +40,42 @@ const ShopByCategory = () => {
 
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-3 lg:p-0">
-            {uicornData.slice(0, 4).map((subcat) => (
+            {uicornData.slice(0, 3).map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {horseData.slice(0, 4).map((subcat) => (
+            {horseData.slice(0, 3).map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {teddy_bearData.slice(0, 4).map((subcat) => (
+            {teddy_bearData.slice(0, 3).map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {dinosaurData.slice(0, 4).map((subcat) => (
+            {dinosaurData.slice(0, 3).map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid ggrid-cols-1 md:grid-cols-3 gap-4">
-            {catsData.slice(0, 4).map((subcat) => (
+            {catsData.slice(0, 3).map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {dogsData.slice(0, 4).map((subcat) => (
+            {dogsData.slice(0, 3).map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>

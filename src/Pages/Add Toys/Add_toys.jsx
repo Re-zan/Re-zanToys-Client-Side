@@ -8,6 +8,7 @@ const Add_toys = () => {
   const {
     register,
     handleSubmit,
+
     formState: { errors },
   } = useForm();
   const onSubmit = (toyData) => {
@@ -19,7 +20,7 @@ const Add_toys = () => {
       body: JSON.stringify(toyData),
     })
       .then((res) => res.json)
-      .then(() => {
+      .then((result) => {
         Swal.fire({
           title: "Success!",
           text: "Successfully Added A Toy",
