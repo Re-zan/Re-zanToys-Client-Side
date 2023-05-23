@@ -40,9 +40,40 @@ const Blog = () => {
           </div>
           <div className="collapse-content ">
             <div>
-              <p className="descripction my-6">
-                Nodejs is a javascript run time and Express js is a famous
-                Nodejs framework.
+              <p className="descripction my-6 text-black">
+                <li className="py-2">
+                  {" "}
+                  An access token is mainly used in web aplications for
+                  authentication and authorization purposes. When a user try to
+                  access protected resources on a server that time it gives the
+                  permission by providing the token. But it has a short
+                  lifespan. It will expried after a short validate preiod. It
+                  provides the refresh token to acess the protected resources.
+                </li>
+
+                <li className="py-2">
+                  {" "}
+                  A Refresh token is mainly used in web aplications for
+                  authentication and authorization purposes.Refresh token gives
+                  permission to the user to access the protected resources. A
+                  user can re-validated without login. It has a long life span.
+                  When anacces token expried a user can access the resources by
+                  useing refresh token.{" "}
+                </li>
+
+                <li className="py-2">
+                  {" "}
+                  An access token and a refresh token are commonly used in web
+                  applications for authentication and authorization purposes.
+                  But an access token has short-lived. It expries after a
+                  preiod. If a user want to obtain the access again the can use
+                  the refresh token without login.
+                </li>
+                <li className="py-2">
+                  {" "}
+                  We should store them on the client-side's memory, cookies and
+                  web storage
+                </li>
               </p>
             </div>
           </div>
@@ -56,8 +87,17 @@ const Blog = () => {
           <div className="collapse-content ">
             <div>
               <p className="descripction my-6">
-                Nodejs is a javascript run time and Express js is a famous
-                Nodejs framework.
+                SQL (Structured Query Language) and NoSQL (Not Only SQL) are two
+                types of database management systems:
+                <li className="py-2">
+                  {" "}
+                  SQL (Structured Query Language) follows a tabluar and
+                  relational schema to contain the user data. On the other hand
+                  NoSQL (Not Only SQL) doesn't follow tabluar and relational
+                  schema. It is more flexible, scalable, and suitable for
+                  handling unstructured or semi-structured. It contains data in
+                  a array. It is called collection{" "}
+                </li>
               </p>
             </div>
           </div>
@@ -71,8 +111,8 @@ const Blog = () => {
           <div className="collapse-content ">
             <div>
               <p className="descripction my-6">
-                Nodejs is a javascript run time and Express js is a famous
-                Nodejs framework.
+                Express js and Nest JS both of are the js framework. Express js
+                is flexibled framework. But Nest.js is a structured framework.
               </p>
             </div>
           </div>
@@ -86,8 +126,9 @@ const Blog = () => {
           <div className="collapse-content ">
             <div>
               <p className="descripction my-6">
-                Nodejs is a javascript run time and Express js is a famous
-                Nodejs framework.
+                MongoDB aggregate is a method to handale advanced and complex
+                database system.Aggregate method works in input documents,
+                document transformation, output documents and so on.
               </p>
             </div>
           </div>

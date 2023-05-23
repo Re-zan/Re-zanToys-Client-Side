@@ -17,7 +17,7 @@ const BlogData = ({ blog }) => {
             <img src={autho_img} className="img_hover" />
           </div>
         </div>
-        <div className="card-body w-[300px] md:w-[400px] lg:w-[500px]">
+        <div className="card-body w-[300px] md:w-[630px] lg:w-[500px]">
           <h2 className="card-title text-[#a56f7c] font-swash text-2xl">
             {title}
           </h2>

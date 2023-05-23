@@ -28,7 +28,7 @@ const ShopByCategory = () => {
   return (
     <div className="my_container">
       <Tabs>
-        <TabList>
+        <TabList style={{ color: "#000000" }}>
           <Tab>Uicorn</Tab>
           <Tab>Horse</Tab>
           <Tab>Teddy_bear</Tab>

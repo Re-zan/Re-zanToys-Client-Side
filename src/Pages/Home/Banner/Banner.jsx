@@ -14,14 +14,14 @@ const Banner = () => {
     <div className="bg-gray-800">
       <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
-          <div
-            className="my_container grid grid-cols-1 lg:grid-cols-2 pt-10 pb-16"
-            data-aos="fade-right"
-            data-aos-offset="200"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="600"
-          >
-            <div className="my-16 text-center lg:text-left p-8 md:p-3 lg:p-0">
+          <div className="my_container grid grid-cols-1 lg:grid-cols-2 pt-10 pb-16">
+            <div
+              className="my-16 text-center lg:text-left p-8 md:p-3 lg:p-0"
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <h2 className=" font-swash text-[#b18792] text-6xl ">
                 Get Ready for Fun-Filled <br></br> Adventures at Re-zanToys
               </h2>
@@ -39,7 +39,13 @@ const Banner = () => {
                 <button className="btn_style">Explore All Toys</button>
               </Link>
             </div>
-            <div className=" hidden lg:block  ">
+            <div
+              className=" hidden lg:block"
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <Lottie animationData={banner1} loop={true} />
             </div>
           </div>
@@ -60,14 +66,14 @@ const Banner = () => {
         </div>
 
         <div id="slide2" className="carousel-item relative w-full">
-          <div
-            className="my_container grid grid-cols-1 lg:grid-cols-2 pt-10 pb-16"
-            data-aos="fade-right"
-            data-aos-offset="200"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="600"
-          >
-            <div className="my-16 text-center lg:text-left p-8 md:p-3 lg:p-0">
+          <div className="my_container grid grid-cols-1 lg:grid-cols-2 pt-10 pb-16">
+            <div
+              className="my-16 text-center lg:text-left p-8 md:p-3 lg:p-0"
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <h2 className=" font-swash text-[#b18792] text-6xl ">
                 Discover Endless Joy in our Toy Wonderland!
               </h2>
@@ -85,7 +91,13 @@ const Banner = () => {
                 <button className="btn_style">Explore All Toys</button>
               </Link>
             </div>
-            <div className=" hidden lg:block ">
+            <div
+              className=" hidden lg:block "
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <Lottie animationData={banner2} loop={true} />
             </div>
           </div>
@@ -106,14 +118,14 @@ const Banner = () => {
         </div>
 
         <div id="slide3" className="carousel-item relative w-full">
-          <div
-            className="my_container grid grid-cols-1 lg:grid-cols-2 pt-10 pb-16"
-            data-aos="fade-right"
-            data-aos-offset="200"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="600"
-          >
-            <div className="my-16 text-center lg:text-left p-8 md:p-3 lg:p-0">
+          <div className="my_container grid grid-cols-1 lg:grid-cols-2 pt-10 pb-16">
+            <div
+              className="my-16 text-center lg:text-left p-8 md:p-3 lg:p-0"
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <h2 className=" font-swash text-[#b18792] text-6xl ">
                 Ignite the Joy of Play and Create Cherished Memories!
               </h2>
@@ -131,7 +143,13 @@ const Banner = () => {
                 <button className="btn_style">Explore All Toys</button>
               </Link>
             </div>
-            <div className=" hidden lg:block ">
+            <div
+              className=" hidden lg:block "
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <Lottie animationData={banner3} loop={true} />
             </div>
           </div>

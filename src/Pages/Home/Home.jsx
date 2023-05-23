@@ -36,6 +36,7 @@ const Home = () => {
 
       {/* gallery part start */}
       <div
+        className="my_container"
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="ease-in-sine"
@@ -52,6 +53,7 @@ const Home = () => {
 
       {/* shop by Category start */}
       <div
+        className="my_container"
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="ease-in-sine"
@@ -77,10 +79,11 @@ const Home = () => {
 
       {/* our blog part start */}
       <div
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-easing="ease-in-sine"
-        data-aos-duration="600"
+      // className="my_container"
+      // data-aos="fade-up"
+      // data-aos-offset="200"
+      // data-aos-easing="ease-in-sine"
+      // data-aos-duration="600"
       >
         <Heading
           title="Our Latest Blogs "

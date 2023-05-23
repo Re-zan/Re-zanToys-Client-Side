@@ -9,7 +9,7 @@ const Blogs = () => {
       .then((data) => setBlogs(data));
   }, []);
   return (
-    <div className="my_container grid grid-cols-1 md:grid-cols-2 gap-6 p-4 lg:p-0 mb-10">
+    <div className="my_container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-4 lg:p-0 mb-10">
       {blogs.slice(0, 2).map((blog) => (
         <BlogData key={blog._id} blog={blog}></BlogData>
       ))}

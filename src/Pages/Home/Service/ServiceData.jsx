@@ -6,7 +6,7 @@ const ServiceData = ({ service }) => {
         <img
           src={img_url}
           alt={service_name}
-          className=" h-60 w-full img_hover "
+          className=" h-80 md:h-60 w-full img_hover "
         />
       </figure>
       <div className="card-body">
