@@ -11,20 +11,30 @@ const ShopByCategory = () => {
   }, []);
 
   //Uicorn data
-  const uicornData = toys.filter((data) => data.Sub_category === "unicorn");
+  const uicornData = toys
+    .filter((data) => data.Sub_category === "unicorn")
+    .slice(0, 8);
 
   //Horse data
-  const horseData = toys.filter((data) => data.Sub_category === "horse");
+  const horseData = toys
+    .filter((data) => data.Sub_category === "horse")
+    .slice(0, 8);
   //teddy_bear data
-  const teddy_bearData = toys.filter(
-    (data) => data.Sub_category === "teddy_bear"
-  );
+  const teddy_bearData = toys
+    .filter((data) => data.Sub_category === "teddy_bear")
+    .slice(0, 8);
   //dinosaur data
-  const dinosaurData = toys.filter((data) => data.Sub_category === "dinosaur");
+  const dinosaurData = toys
+    .filter((data) => data.Sub_category === "dinosaur")
+    .slice(0, 8);
   //dogs data
-  const dogsData = toys.filter((data) => data.Sub_category === "dogs");
+  const dogsData = toys
+    .filter((data) => data.Sub_category === "dogs")
+    .slice(0, 8);
   //cats data
-  const catsData = toys.filter((data) => data.Sub_category === "cats");
+  const catsData = toys
+    .filter((data) => data.Sub_category === "cats")
+    .slice(0, 8);
 
   return (
     <div className="my_container">
@@ -39,43 +49,43 @@ const ShopByCategory = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-3 lg:p-0">
-            {uicornData.slice(0, 3).map((subcat) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-3 lg:p-0">
+            {uicornData.map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {horseData.slice(0, 3).map((subcat) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {horseData.map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {teddy_bearData.slice(0, 3).map((subcat) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {teddy_bearData.map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {dinosaurData.slice(0, 3).map((subcat) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {dinosaurData.map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid ggrid-cols-1 md:grid-cols-3 gap-4">
-            {catsData.slice(0, 3).map((subcat) => (
+          <div className="grid ggrid-cols-1 md:grid-cols-4 gap-6">
+            {catsData.map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {dogsData.slice(0, 3).map((subcat) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {dogsData.map((subcat) => (
               <CategoryData subcat={subcat} key={subcat._id}></CategoryData>
             ))}
           </div>

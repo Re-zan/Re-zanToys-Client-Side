@@ -17,15 +17,12 @@ const Login = () => {
   // googlogIn
   const handleGoogleLogIn = () => {
     googleLogin()
-      .then((result) => {
-        const user = result.user;
-
-        console.log(user);
+      .then(() => {
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
       });
-    navigate(from, { replace: true });
   };
   //log in start
   const handleLogin = (event) => {
@@ -37,8 +34,7 @@ const Login = () => {
 
     if ((email, password)) {
       logIn(email, password)
-        .then((result) => {
-          const user = result.user;
+        .then(() => {
           form.reset();
           navigate(from, { replace: true });
         })
@@ -103,7 +99,7 @@ const Login = () => {
 
         <div className="text-center">
           <button
-            className="btn btn-outline btn-primary w-[200px] md:w-[500px] "
+            className="btn  btn-primary w-[200px] md:w-[500px] "
             onClick={handleGoogleLogIn}
           >
             <FaGofore className="text-xl mr-2" />{" "}

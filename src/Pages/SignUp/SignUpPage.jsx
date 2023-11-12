@@ -19,10 +19,12 @@ const SignUpPage = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
+
     if (password.length < 6) {
       setErrors("The password is less than 6 characters");
       return;
     }
+
     if ((email, password)) {
       createUser(email, password)
         .then((result) => {

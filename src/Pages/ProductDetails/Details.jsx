@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaEnvelopeOpen, FaUserAlt } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import CategoryData from "../Home/Shop BY Category/CategoryData";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const detail = useLoaderData();
@@ -30,6 +31,9 @@ const Details = () => {
   const mayLke = toys.filter(
     (data) => data.Sub_category == Sub_category && data._id !== _id
   );
+  const handleAddToCart = () => {
+    toast(`${toy_name} has been added to the cart`);
+  };
   return (
     <div>
       <div className="my_container">
@@ -75,6 +79,9 @@ const Details = () => {
                 </p>
               </div>
             </div>
+            <button className="btn_style" onClick={handleAddToCart}>
+              Add to cart
+            </button>
           </div>
         </div>
 

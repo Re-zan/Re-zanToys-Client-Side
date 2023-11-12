@@ -1,8 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Provider/AuthProviders";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -11,13 +10,8 @@ const CategoryData = ({ subcat }) => {
     AOS.init();
   }, []);
 
-  const { user } = useContext(AuthContext);
   const { _id, photo, toy_name, toy_rating, toy_price } = subcat;
-  const dhdh = () => {
-    if (!user) {
-      alert("You have to log in first to view details");
-    }
-  };
+
   return (
     <div
       className="card bg-gray-200 "
@@ -36,10 +30,7 @@ const CategoryData = ({ subcat }) => {
 
       <div className=" absolute top-3 right-4">
         <Link to={`/toys/${_id}`}>
-          <button
-            className="text-white px-4 py-2 rounded-lg bg-[#A4747F] border-0  text-sm  hover:bg-[#8CA6A2]"
-            onClick={dhdh}
-          >
+          <button className="text-white px-4 py-2 rounded-lg bg-[#A4747F] border-0  text-sm  hover:bg-[#8CA6A2]">
             Details
           </button>
         </Link>
@@ -48,7 +39,7 @@ const CategoryData = ({ subcat }) => {
         <h2 className="card-title text-[#a56f7c] font-swash text-3xl  h-20">
           {toy_name}
         </h2>
-        <div className="flex items-center my-8 text-lg">
+        <div className="flex items-center my-8 text-sm">
           <p className="text-gray-800 font-semibold">Price: $ {toy_price}</p>
           <Rating
             style={{ maxWidth: 100 }}

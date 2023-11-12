@@ -11,37 +11,36 @@ const My_toys = () => {
       .then((data) => setMy_toys(data));
   }, [user]);
 
-  const handleAes = () => {
-    fetch(`https://re-zan-toys-server-side.vercel.app/my-toys/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setMy_toys(data));
+  const handleFilterChange = (event) => {
+    const selectedFilter = event.target.value;
+    if (selectedFilter === "asc") {
+      fetch(`https://re-zan-toys-server-side.vercel.app/my-toys/${user?.email}`)
+        .then((res) => res.json())
+        .then((data) => setMy_toys(data));
+    } else if (selectedFilter === "desc") {
+      fetch(
+        `https://re-zan-toys-server-side.vercel.app/my-toys/des/${user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => setMy_toys(data));
+    }
   };
-  const handleDes = () => {
-    fetch(
-      `https://re-zan-toys-server-side.vercel.app/my-toys/des/${user?.email}`
-    )
-      .then((res) => res.json())
-      .then((data) => setMy_toys(data));
-  };
-  // function run() {}
+
   return (
     <div>
       {" "}
       <div className="my_container">
         <div className="flex items-center mt-20">
-          <p className="text-3xl font-swash font-semibold mr-3">Filter By :</p>
-          <button
-            className="btn bg-[#A4747F] text-white border-0 mr-6"
-            onClick={handleAes}
+          <p className="text-3xl font-swash font-semibold mr-3 text-black">
+            Filter By:
+          </p>
+          <select
+            className=" bg-[#A4747F] text-white  border-0  focus:outline-none p-5 "
+            onChange={handleFilterChange}
           >
-            Ascending{" "}
-          </button>
-          <button
-            className="btn bg-[#A4747F] text-white border-0 mr-6"
-            onClick={handleDes}
-          >
-            Descending
-          </button>
+            <option value="asc">Less Price</option>
+            <option value="desc">Biggest Price</option>
+          </select>
         </div>
 
         <div className="overflow-x-auto mb-20 mt-6">

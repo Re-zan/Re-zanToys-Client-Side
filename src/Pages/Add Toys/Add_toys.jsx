@@ -4,14 +4,24 @@ import { AuthContext } from "../../Provider/AuthProviders";
 import Swal from "sweetalert2";
 const Add_toys = () => {
   const { user } = useContext(AuthContext);
-  // console.log(user);
+
+  console.log(user?.displayName);
+  console.log(user?.email);
+
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (toyData) => {
+  const onSubmit = (data) => {
+    const toyData = {
+      seller_name: user?.displayName,
+      seller_email: user?.email,
+      ...data,
+    };
+    console.log(data);
+    console.log(toyData);
     fetch("https://re-zan-toys-server-side.vercel.app/toys", {
       method: "POST",
       headers: {
@@ -20,7 +30,8 @@ const Add_toys = () => {
       body: JSON.stringify(toyData),
     })
       .then((res) => res.json)
-      .then((result) => {
+      .then(() => {
+        reset();
         Swal.fire({
           title: "Success!",
           text: "Successfully Added A Toy",
@@ -45,27 +56,35 @@ const Add_toys = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="my-3 w-full  max-w-lg mx-auto">
             <input
+              type="text"
               value={user?.displayName}
-              {...register("seller_name")}
-              className="w-full max-w-lg mx-auto p-2"
+              className="w-full max-w-lg mx-auto p-3"
             />
           </div>
           <div className="my-3 w-full  max-w-lg mx-auto">
             <input
+              type="email"
               value={user?.email}
-              {...register("seller_email")}
-              className="w-full max-w-lg mx-auto p-2"
+              className="w-full max-w-lg mx-auto p-3"
             />
           </div>
 
           <div className="my-3 w-full  max-w-lg mx-auto">
             <input
               placeholder="Picture URL of the toy "
-              {...register("photo", { required: true })}
-              className="w-full max-w-lg mx-auto p-2"
+              {...register("photo", {
+                required: true,
+                pattern: /^(https?:\/\/.*\.(?:png|jpg|jpeg|svg|webp))$/,
+              })}
+              className="w-full max-w-lg mx-auto p-3"
             />
-            {errors.photo && (
+            {errors.photo?.type === "required" && (
               <span className="text-red-800">This field is required</span>
+            )}
+            {errors.photo?.type === "pattern" && (
+              <span className="text-red-800">
+                Please enter a valid image link (jpg, jpeg, png, svg, webp)
+              </span>
             )}
           </div>
 
@@ -73,7 +92,7 @@ const Add_toys = () => {
             <input
               placeholder="Toy Name"
               {...register("toy_name", { required: true })}
-              className="w-full max-w-lg mx-auto p-2"
+              className="w-full max-w-lg mx-auto p-3"
             />
             {errors.toy_name && (
               <span className="text-red-800">This field is required</span>
@@ -83,7 +102,7 @@ const Add_toys = () => {
           <div className="my-3 w-full  max-w-lg mx-auto">
             <select
               {...register("Sub_category")}
-              className="w-full max-w-lg mx-auto p-2"
+              className="w-full max-w-lg mx-auto p-3"
             >
               <option value="teddy_bear">Teddy Bear</option>
               <option value="unicorn">Unicorn</option>
@@ -102,7 +121,7 @@ const Add_toys = () => {
               type="number"
               placeholder="Toy Price"
               {...register("toy_price", { required: true })}
-              className="w-full max-w-lg mx-auto p-2"
+              className="w-full max-w-lg mx-auto p-3"
             />
             {errors.toy_price && (
               <span className="text-red-800">This field is required</span>
@@ -112,11 +131,21 @@ const Add_toys = () => {
           <div className="my-3 w-full  max-w-lg mx-auto">
             <input
               placeholder="Toy Rating"
-              {...register("toy_rating", { required: true })}
-              className="w-full max-w-lg mx-auto p-2"
+              {...register("toy_rating", {
+                required: true,
+
+                pattern: /^(?:[1-4](\.[0-9])?|5)$/,
+              })}
+              className="w-full max-w-lg mx-auto p-3"
             />
-            {errors.toy_rating && (
+            {errors.toy_rating?.type === "required" && (
               <span className="text-red-800">This field is required</span>
+            )}
+
+            {errors.toy_rating?.type === "pattern" && (
+              <span className="text-red-800">
+                Please enter a valid toy rating between 1 and 5.
+              </span>
             )}
           </div>
 
@@ -125,7 +154,7 @@ const Add_toys = () => {
               type="number"
               placeholder="Available quantity"
               {...register("quantity", { required: true })}
-              className="w-full max-w-lg mx-auto p-2"
+              className="w-full max-w-lg mx-auto p-3"
             />
             {errors.quantity && (
               <span className="text-red-800">This field is required</span>
